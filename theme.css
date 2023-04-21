@@ -34,21 +34,6 @@ settings:
     default: ''
     options:
         -
-            label: Low contrast
-            value: o-con-l
-        -
-            label: fff/000
-            value: o-super-con-l
-        -
-            label: Accent tinted
-            value: o-accent-bg-l
-        -
-            label: Accent tinted, low contrast
-            value: o-accent-bg-lowcon-l
-        -
-            label: Architect
-            value: o-arch-l
-        -
             label: Soft
             value: o-soft-l
         -
@@ -77,21 +62,6 @@ settings:
     allowEmpty: true
     default: ''
     options:
-        -
-            label: Low contrast
-            value: o-con-d
-        -
-            label: fff/000
-            value: o-super-con-d
-        -
-            label: Accent tinted
-            value: o-accent-bg-d
-        -
-            label: Accent tinted, low contrast
-            value: o-accent-bg-lowcon-d
-        -
-            label: Architect
-            value: o-arch-d
         -
             label: Soft
             value: o-soft-d
@@ -259,9 +229,9 @@ settings:
 	--color-base-10: #FAFAFA; /* background-primary-alt */
 	--color-base-20: #ECECEC; /* background-secondary */
 	--color-base-25: #E3E3E3; /* idk lol */
-	--color-base-30: #B3B3B3; /* background-modifier-border */
+	--color-base-30: #efdedf; /* background-modifier-border */
 	--color-base-35: #BEBEBE; /* background-modifier-border-hover */
-	--color-base-40: #B3B3B3; /* background-modifier-border-focus */
+	--color-base-40: #efdedf; /* background-modifier-border-focus */
 	--color-base-50: #e5989b; /* text-faint */
 	--color-base-60: #333331; /* also no clue */
 	--color-base-70: #333331; /* text-muted */
@@ -2529,6 +2499,83 @@ kbd,
 	margin-left: 10px;
 
 	border-radius: 4px;
+}
+
+/* new tab page inspired by @sai1494 */
+.empty-state-container {
+	max-height: unset;
+	opacity: 1 !important;
+}
+
+.empty-state-container::before {
+	content: "";
+
+	background: var(--color-accent);
+
+	padding: 80px;
+
+	-webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iaGVpZ2h0OiA1MTJweDsgd2lkdGg6IDUxMnB4OyI+PGcgY2xhc3M9IiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwwKSIgc3R5bGU9IiI+PHBhdGggZD0iTTEzOS42MjUgMjMuNTYzYy0xLjU4LjAwOC0zLjE0Ny4wNTItNC43Mi4xMjVsMTcxLjc1IDI1OC4wOTNoMTQ2LjI1YzE1LjM1LTE2LjkwNiAyNy44NzUtMzUuMjYzIDM1LjY5LTU2LjU2aC05Ni44NzZjLTcuMzE3IDE4LjE3LTI1LjEzNiAzMS4wOTMtNDUuODQ1IDMxLjA5My0yNy4xNzMgMC00OS4zNzUtMjIuMjMzLTQ5LjM3NS00OS40MDcgMC0xMS40MzYgMy45NS0yMS45NzggMTAuNTMtMzAuMzc1bC00OS4xNTUtNzcuNjU1Yy0uMDMuMDUzLS4wNjMuMTAzLS4wOTQuMTU2LTEuMTgzLTIuMDUtMi4zOTUtNC4wMzYtMy42MjQtNi0zMC4xMDYtNDguMDg2LTczLjI4LTY5LjY5NC0xMTQuNTMtNjkuNDY4em0yMjguNjU2IDIuNjU2Yy0zNS44NjQuMzI4LTcyLjY0OCAxOC4wNTYtMTAwLjc4IDU3LjY1NWgyMDQuMTI1QzQ0Ny4xNDcgNDcuMTMzIDQwOC4yOTMgMjUuODUgMzY4LjI4IDI2LjIyem0tMjUzLjk2Ny4yNWMtMTEuNDk1IDIuNjI0LTIyLjU4IDcuMDA3LTMyLjg3NiAxMyAxMC42NzIgOS4wOCAxNy40NyAyMi42IDE3LjQ3IDM3LjYyNCAwIDEyLjcyLTQuODczIDI0LjM1LTEyLjg0NCAzMy4xMjVsNDMuMTg3IDY3LjMxaDg1LjU5NEwxMTQuMzE0IDI2LjQ3ek00OS41IDQ2LjM3NGMtMTcuMDc0IDAtMzAuNzIgMTMuNjQ1LTMwLjcyIDMwLjcyIDAgMTcuMDczIDEzLjY0NiAzMC42ODYgMzAuNzIgMzAuNjg2IDE3LjA3NCAwIDMwLjcyLTEzLjYxMiAzMC43Mi0zMC42ODYgMC0xNy4wNzQtMTMuNjQ2LTMwLjcyLTMwLjcyLTMwLjcyem0yMzIuODQ0IDU2LjE4OGwzOC45NyA2MS41M2M3LjI0LTQuMTg0IDE1LjYzNS02LjU5MyAyNC41Ni02LjU5MyAyNy4wNSAwIDQ5LjIwMyAyMi4wMyA0OS40MDcgNDkuMDNoOTguNzVjMi41NzUtMTEuODA3IDMuNzU3LTI0LjQ5IDMuMzQ1LTM4LjI1LS43MzUtMjQuNTU1LTYuMjM3LTQ2LjY2LTE1LjIyLTY1LjcxOGgtMTk5Ljgxem0tMjU5LjQ3IDE2LjA2MmMtNC4wMiAxNS4wMi01Ljk4NSAzMS42Mi01LjQzNiA0OS42NTYuMDk1IDMuMTQzLjI5MyA2LjIxNS41NjIgOS4yNWg4OS4wNjNsLTM1Ljk3LTU2LjA2Yy02LjUzMyAzLjE5Ny0xMy44NiA1LTIxLjU5MyA1LTkuNzkgMC0xOC45MjYtMi44ODctMjYuNjI1LTcuODQ1em0zMjMgNTcuNTYzYy0xNy4wNzMgMC0zMC42ODcgMTMuNjQ0LTMwLjY4NyAzMC43MTggMCAxNy4wNzQgMTMuNjE0IDMwLjcyIDMwLjY4OCAzMC43MiAxNy4wNzQgMCAzMC43Mi0xMy42NDYgMzAuNzItMzAuNzIgMC0xNy4wNzQtMTMuNjQ2LTMwLjcyLTMwLjcyLTMwLjcyem0tMzI1LjAzIDIwLjAzYzMuNjkzIDE2LjkzOCAxMC4xODcgMzIuMjAzIDE4Ljc1IDQ2LjM0NUgxOTYuNTYybDIuNzUgNC4zNDNMMjc2Ljk3IDM2OS41M2w5LjA5MiAxNC4zNDVIMjEyLjIyYy0xLjQwMyA2Ljk2LTQuMjc0IDEzLjQxOC04LjI4MiAxOSAyMi4xNjQgMjQuNTYyIDQxLjMzNSA1Mi41NzMgNTMuODQzIDg2Ljc1IDM1LjE1Ni05MC45NDQgMTE4LjEzMi0xMzQuODcyIDE3Ni41NjQtMTg5LjE1NmgtMTM3LjcybC0yLjc4LTQuMTktNjYuNTk0LTEwMC4wNkgyMC44NDR6TTUyLjUgMjYxLjI1YzIxLjE5MyAyNy4yMyA0OS43OTYgNTAuNzY0IDc5LjMxMyA3NS4zMTMgOC42MzMtNy4zNTQgMTkuODA4LTExLjgxMyAzMS45NjgtMTEuODEzIDI0LjExNiAwIDQ0LjM0OCAxNy41MDQgNDguNTk1IDQwLjQzOGgzOS43MkwxODYuMjggMjYxLjI1SDUyLjV6bTExMS4yOCA4Mi4xODhjLTE3LjA3MyAwLTMwLjcxOCAxMy42NDQtMzAuNzE4IDMwLjcxOCAwIDE3LjA3NCAxMy42NDUgMzAuNzIgMzAuNzIgMzAuNzIgMTcuMDczIDAgMzAuNjg3LTEzLjY0NiAzMC42ODctMzAuNzIgMC0xNy4wNzQtMTMuNjE1LTMwLjcyLTMwLjY5LTMwLjcyeiIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIxIj48L3BhdGg+PC9nPjwvc3ZnPg==");
+	-webkit-mask-repeat: no-repeat;
+}
+
+/* .theme-dark .empty-state-container::before {
+	opacity: 0.3;
+}
+
+.theme-light .empty-state-container::before {
+	opacity: 0.5;
+} */
+
+.empty-state-container:hover::before {
+	content: "";
+
+	background: linear-gradient(-45deg, #f5ebe0, #ffafcc, var(--color-accent), var(--color-accent));
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+
+	padding: 80px;
+
+	-webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iaGVpZ2h0OiA1MTJweDsgd2lkdGg6IDUxMnB4OyI+PGcgY2xhc3M9IiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwwKSIgc3R5bGU9IiI+PHBhdGggZD0iTTEzOS42MjUgMjMuNTYzYy0xLjU4LjAwOC0zLjE0Ny4wNTItNC43Mi4xMjVsMTcxLjc1IDI1OC4wOTNoMTQ2LjI1YzE1LjM1LTE2LjkwNiAyNy44NzUtMzUuMjYzIDM1LjY5LTU2LjU2aC05Ni44NzZjLTcuMzE3IDE4LjE3LTI1LjEzNiAzMS4wOTMtNDUuODQ1IDMxLjA5My0yNy4xNzMgMC00OS4zNzUtMjIuMjMzLTQ5LjM3NS00OS40MDcgMC0xMS40MzYgMy45NS0yMS45NzggMTAuNTMtMzAuMzc1bC00OS4xNTUtNzcuNjU1Yy0uMDMuMDUzLS4wNjMuMTAzLS4wOTQuMTU2LTEuMTgzLTIuMDUtMi4zOTUtNC4wMzYtMy42MjQtNi0zMC4xMDYtNDguMDg2LTczLjI4LTY5LjY5NC0xMTQuNTMtNjkuNDY4em0yMjguNjU2IDIuNjU2Yy0zNS44NjQuMzI4LTcyLjY0OCAxOC4wNTYtMTAwLjc4IDU3LjY1NWgyMDQuMTI1QzQ0Ny4xNDcgNDcuMTMzIDQwOC4yOTMgMjUuODUgMzY4LjI4IDI2LjIyem0tMjUzLjk2Ny4yNWMtMTEuNDk1IDIuNjI0LTIyLjU4IDcuMDA3LTMyLjg3NiAxMyAxMC42NzIgOS4wOCAxNy40NyAyMi42IDE3LjQ3IDM3LjYyNCAwIDEyLjcyLTQuODczIDI0LjM1LTEyLjg0NCAzMy4xMjVsNDMuMTg3IDY3LjMxaDg1LjU5NEwxMTQuMzE0IDI2LjQ3ek00OS41IDQ2LjM3NGMtMTcuMDc0IDAtMzAuNzIgMTMuNjQ1LTMwLjcyIDMwLjcyIDAgMTcuMDczIDEzLjY0NiAzMC42ODYgMzAuNzIgMzAuNjg2IDE3LjA3NCAwIDMwLjcyLTEzLjYxMiAzMC43Mi0zMC42ODYgMC0xNy4wNzQtMTMuNjQ2LTMwLjcyLTMwLjcyLTMwLjcyem0yMzIuODQ0IDU2LjE4OGwzOC45NyA2MS41M2M3LjI0LTQuMTg0IDE1LjYzNS02LjU5MyAyNC41Ni02LjU5MyAyNy4wNSAwIDQ5LjIwMyAyMi4wMyA0OS40MDcgNDkuMDNoOTguNzVjMi41NzUtMTEuODA3IDMuNzU3LTI0LjQ5IDMuMzQ1LTM4LjI1LS43MzUtMjQuNTU1LTYuMjM3LTQ2LjY2LTE1LjIyLTY1LjcxOGgtMTk5Ljgxem0tMjU5LjQ3IDE2LjA2MmMtNC4wMiAxNS4wMi01Ljk4NSAzMS42Mi01LjQzNiA0OS42NTYuMDk1IDMuMTQzLjI5MyA2LjIxNS41NjIgOS4yNWg4OS4wNjNsLTM1Ljk3LTU2LjA2Yy02LjUzMyAzLjE5Ny0xMy44NiA1LTIxLjU5MyA1LTkuNzkgMC0xOC45MjYtMi44ODctMjYuNjI1LTcuODQ1em0zMjMgNTcuNTYzYy0xNy4wNzMgMC0zMC42ODcgMTMuNjQ0LTMwLjY4NyAzMC43MTggMCAxNy4wNzQgMTMuNjE0IDMwLjcyIDMwLjY4OCAzMC43MiAxNy4wNzQgMCAzMC43Mi0xMy42NDYgMzAuNzItMzAuNzIgMC0xNy4wNzQtMTMuNjQ2LTMwLjcyLTMwLjcyLTMwLjcyem0tMzI1LjAzIDIwLjAzYzMuNjkzIDE2LjkzOCAxMC4xODcgMzIuMjAzIDE4Ljc1IDQ2LjM0NUgxOTYuNTYybDIuNzUgNC4zNDNMMjc2Ljk3IDM2OS41M2w5LjA5MiAxNC4zNDVIMjEyLjIyYy0xLjQwMyA2Ljk2LTQuMjc0IDEzLjQxOC04LjI4MiAxOSAyMi4xNjQgMjQuNTYyIDQxLjMzNSA1Mi41NzMgNTMuODQzIDg2Ljc1IDM1LjE1Ni05MC45NDQgMTE4LjEzMi0xMzQuODcyIDE3Ni41NjQtMTg5LjE1NmgtMTM3LjcybC0yLjc4LTQuMTktNjYuNTk0LTEwMC4wNkgyMC44NDR6TTUyLjUgMjYxLjI1YzIxLjE5MyAyNy4yMyA0OS43OTYgNTAuNzY0IDc5LjMxMyA3NS4zMTMgOC42MzMtNy4zNTQgMTkuODA4LTExLjgxMyAzMS45NjgtMTEuODEzIDI0LjExNiAwIDQ0LjM0OCAxNy41MDQgNDguNTk1IDQwLjQzOGgzOS43MkwxODYuMjggMjYxLjI1SDUyLjV6bTExMS4yOCA4Mi4xODhjLTE3LjA3MyAwLTMwLjcxOCAxMy42NDQtMzAuNzE4IDMwLjcxOCAwIDE3LjA3NCAxMy42NDUgMzAuNzIgMzAuNzIgMzAuNzIgMTcuMDczIDAgMzAuNjg3LTEzLjY0NiAzMC42ODctMzAuNzIgMC0xNy4wNzQtMTMuNjE1LTMwLjcyLTMwLjY5LTMwLjcyeiIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIxIj48L3BhdGg+PC9nPjwvc3ZnPg==");
+	-webkit-mask-repeat: no-repeat;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.empty-state-action-list {
+	margin-top: 80px;
+}
+
+.empty-state-action:hover {
+	color: var(--text-normal);
+	cursor: var(--cursor);
+}
+
+.empty-state-action {
+	font-weight: 400;
+
+	color: var(--text-muted);
+
+	padding: 0 4px;
+
+	border: 1px solid var(--background-primary);
+	border-radius: var(--radius-m);
+
+	transition: all 0.2s ease-in-out;
+	cursor: var(--cursor);
+}
+
+.empty-state-title {
+	display: none;
 }
 
 /* new note button, inspired by border
