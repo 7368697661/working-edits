@@ -3780,3 +3780,33 @@ th.svelte-pcimu8 {
 body {
 	--floating-toc-header-background: var(--background-secondary);
 }
+
+/* .loom-children {
+    margin-left: 0.0em;
+    padding-left: 0.1em;
+    border-left: 1px solid var(--color-base-35);
+	border-right: none;
+	border-top: 1px dashed var(--color-base-35);
+	border-top-left-radius: 8px;
+	border-bottom: none;
+} */
+
+/* .loom-node.is-active::before {
+    content: "";
+    height: 22px;
+    width: 4px;
+    background: var(--color-accent);
+    position: absolute;
+    /* top: 29px; */
+    /* left: 15px; 
+    border-radius: var(--button-radius);
+}
+
+.loom-node.is-active {
+    background: transparent;
+} */
+
+.loom-children {
+    margin-left: 0.755em;
+    padding-left: 0.3em;
+}
