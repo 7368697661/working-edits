@@ -3821,13 +3821,43 @@ body {
     background-image: radial-gradient(circle 600px at calc(100% - 130px) 150px, hsla(var(--accent-h), calc(var(--accent-s) * 1), var(--accent-l), 0.15), var(--background-primary));
 } */
 
-.edits .mod-root .workspace-tabs .workspace-leaf {
+/* .edits .mod-root .workspace-tabs .workspace-leaf {
 	background: radial-gradient(circle 600px at calc(100% - 10px) 20px, hsla(var(--accent-h), calc(var(--accent-s) * 1), var(--accent-l), 0.15), var(--background-primary)), url(https://grainy-gradients.vercel.app/noise.svg);   
 	filter: contrast(170%) brightness(1000%);
+} */
+
+.edits.theme-dark .mod-root .workspace-tabs .workspace-leaf::before {
+	background: linear-gradient(220deg, hsla(var(--accent-h), calc(var(--accent-s) * 1), var(--accent-l), 0.05), var(--background-primary)), url(https://grainy-gradients.vercel.app/noise.svg);   
+	filter: contrast(170%) brightness(300%);
+	content: "";
+
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	opacity: 0.3;
+}
+
+.edits.theme-light .mod-root .workspace-tabs .workspace-leaf::before {
+	background: linear-gradient(220deg, hsla(var(--accent-h), calc(var(--accent-s) * 1), var(--accent-l), 0.15), var(--background-primary)), url(https://grainy-gradients.vercel.app/noise.svg);   
+	filter: contrast(170%) brightness(100%);
+	content: "";
+
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	opacity: 0.3;
+}
+
+.edits .mod-root .workspace-tabs .workspace-leaf {
+	background: transparent;
 }
 
 .edits.theme-dark  {
 	--background-primary: #030303;
+}
+
+.edits.theme-light  {
+	--background-primary: #f7f7f7;
 }
 
 .edits .mod-left-split .workspace-tabs .workspace-leaf,
@@ -3835,3 +3865,32 @@ body {
 	background: var(--background-primary);
 }
 
+.markdown-rendered hr,
+hr:not(.workspace-leaf-resize-handle) {
+    margin: 1.5em 0;
+    border: 1px solid;
+	border-radius: 4px;
+    border-color: rgba(120, 120, 120, 0.3);
+	background: linear-gradient(-45deg, var(--color-accent), hsl(calc(var(--accent-h) + 180), var(--accent-s), var(--accent-l)));
+	background-size: 400% 400%;
+	animation: gradient 30s ease infinite;
+}
+
+.markdown-rendered hr::after,
+.mod-root .workspace-tabs .workspace-leaf hr::after {
+    content: "◐";
+    padding-left: 50%;
+	color: var(--text-on-accent);
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
