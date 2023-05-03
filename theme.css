@@ -290,9 +290,9 @@ settings:
     --color-base-60: #919191;
     --color-base-70: #ECECEC;
     --color-base-100: #FFF;
-    --color-accent: #70B4F9 !important;
-    --color-accent-rgb: 112, 180, 249 !important;
-    --color-accent-hsl: 210, 92%, 71% !important;
+    --color-accent: #b58094 !important;
+    --color-accent-rgb: 181, 128, 148 !important;
+    --color-accent-hsl: 337, 26%, 61% !important;
     --h1-color: #70B4F9;
     --background-secondary: rgba(var(--color-pink-rgb), 0.1);
     --h2-color: #ffc8dd;
@@ -680,9 +680,9 @@ settings:
 	--color-base-10: #353633;
 	--color-base-20: #212529; /* main background | background-secondary */
 	--color-base-25: #495057;
-	--color-base-30: #868E96;
+	--color-base-30: #191b1e;
 	--color-base-35: #70716E;
-	--color-base-40: #727276;
+	--color-base-40: #191b1e;
 	--color-base-50: #ADB5BD;
 	--color-base-60: #F1F3F5;
 	--color-base-70: #F8F9FA;
@@ -1920,12 +1920,13 @@ body {
 .mod-right-split .workspace-tabs .workspace-leaf {
     /* border-left: 1px dashed var(--background-modifier-border); */
 	border-radius: 0;
+	border-left: 1px dashed var(--background-modifier-border);
 	
 }
 
-.mod-root .workspace-tabs .workspace-leaf {
+/* .mod-root .workspace-tabs .workspace-leaf {
     border-right: 1px dashed var(--background-modifier-border);
-}
+} */
 
 .workspace-tab-header-container {
     display: flex;
@@ -2746,6 +2747,7 @@ a.tag:hover,
 
 .nav-folder-title-content {
 	padding: 2px 0;
+	font-weight: 700;
 }
 
 .nav-folder.mod-root .nav-folder > .nav-folder-children {
@@ -2790,6 +2792,35 @@ a.tag:hover,
 	margin-left: -2px;
 
 	-webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iY3VycmVudENvbG9yIiBjbGFzcz0iYmkgYmktZm9sZGVyMi1vcGVuIiB2aWV3Qm94PSIwIDAgMTYgMTYiPgogIDxwYXRoIGQ9Ik0xIDMuNUExLjUgMS41IDAgMCAxIDIuNSAyaDIuNzY0Yy45NTggMCAxLjc2LjU2IDIuMzExIDEuMTg0QzcuOTg1IDMuNjQ4IDguNDggNCA5IDRoNC41QTEuNSAxLjUgMCAwIDEgMTUgNS41di42NGMuNTcuMjY1Ljk0Ljg3Ni44NTYgMS41NDZsLS42NCA1LjEyNEEyLjUgMi41IDAgMCAxIDEyLjczMyAxNUgzLjI2NmEyLjUgMi41IDAgMCAxLTIuNDgxLTIuMTlsLS42NC01LjEyNEExLjUgMS41IDAgMCAxIDEgNi4xNFYzLjV6TTIgNmgxMnYtLjVhLjUuNSAwIDAgMC0uNS0uNUg5Yy0uOTY0IDAtMS43MS0uNjI5LTIuMTc0LTEuMTU0QzYuMzc0IDMuMzM0IDUuODIgMyA1LjI2NCAzSDIuNWEuNS41IDAgMCAwLS41LjVWNnptLS4zNjcgMWEuNS41IDAgMCAwLS40OTYuNTYybC42NCA1LjEyNEExLjUgMS41IDAgMCAwIDMuMjY2IDE0aDkuNDY4YTEuNSAxLjUgMCAwIDAgMS40ODktMS4zMTRsLjY0LTUuMTI0QS41LjUgMCAwIDAgMTQuMzY3IDdIMS42MzN6Ii8+Cjwvc3ZnPg==");
+	-webkit-mask-repeat: no-repeat;
+}
+
+.nav-file {
+	position: relative;
+	padding-left: 6px;
+}
+
+.nav-file-title {
+	padding-left: 1.5em;
+}
+
+/* .nav-file-title-content {
+	padding-bottom: 4px;
+} */
+
+.nav-file::before {
+	content: "";
+	position: absolute;
+	height: 24px;
+	width: 24px;
+
+	background: var(--color-accent);
+
+	margin-top: 2.05px;
+	margin-right: 8px;
+	margin-left: -2px;
+
+	-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-file-text' width='20' height='20' viewBox='0 0 24 24' stroke-width='1.5' stroke='%232c3e50' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M14 3v4a1 1 0 0 0 1 1h4' /%3E%3Cpath d='M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z' /%3E%3Cline x1='9' y1='9' x2='10' y2='9' /%3E%3Cline x1='9' y1='13' x2='15' y2='13' /%3E%3Cline x1='9' y1='17' x2='15' y2='17' /%3E%3C/svg%3E");
 	-webkit-mask-repeat: no-repeat;
 }
 
@@ -3261,7 +3292,7 @@ input[type="checkbox"]:hover {
 }
 
 input[type="checkbox"]:checked {
-	background: var(--color-accent);
+	background: transparent;
 	border: var(--border-lowOp);
 	animation: pop 0.5s;
 	animation-direction: alternate;
@@ -3274,21 +3305,28 @@ input[type="checkbox"]:checked::after {
 	height: var(--checkbox-size);
 	width: var(--checkbox-size);
 
-	background: var(--text-on-accent);
+	background: var(--text-accent);
 
 	position: absolute;
-	top: -1px;
-	left: -1px;
+	top: 2px;
+	left: -2px;
 
 	-webkit-mask-position: 52% 52%;
-	-webkit-mask-size: 80%;
+	-webkit-mask-size: 100%;
 	-webkit-mask-repeat: no-repeat;
 	-webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"%3E%3Cpath stroke="none" d="M0 0h24v24H0z" fill="none"%3E%3C/path%3E%3Cpath d="M5 12l5 5l10 -10"%3E%3C/path%3E%3C/svg%3E');
+	transition: 700ms;
+}
+
+li[data-task="x"] input[type="checkbox"]:checked::after {
+	left: 1px;
 }
 
 input[type="checkbox"]:checked:hover {
 	background: var(--text-on-accent);
-	border: 1px solid var(--text-on-accent);
+	border: none;
+	transform: scale(1.2);
+	transition: 300ms;
 }
 
 input[type="checkbox"]:checked:hover::after {
@@ -3664,6 +3702,19 @@ em,
 
 /* Plugin support
 */
+
+/* makemd
+*/
+.mk-header .mk-file-icon svg, .mk-header .mk-file-icon button {
+    width: 48px;
+    height: 48px;
+    font-size: 40px;
+    border: none;
+}
+
+.mk-floweditor .workspace-leaf::before {
+background: transparent !important;
+}
 
 /* calendar
 */
